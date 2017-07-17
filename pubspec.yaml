@@ -1,5 +1,5 @@
 name: luis
-description: Microsoft Luis wrapper.
+description: Microsoft Luis Connector.
 version: 0.0.1
 #homepage: https://www.example.com
 author: S.-C. Lee <consoledir@outlook.com>
