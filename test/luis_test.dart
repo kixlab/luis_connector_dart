@@ -74,6 +74,17 @@ void main() {
       "startIndex": 4,
       "endIndex": 4,
       "score": 0.973015123
+    },
+    {
+      "entity": "아 메 리 카 노",
+      "type": "Coffee:Type",
+      "startIndex": 4,
+      "endIndex": 8,
+      "resolution": {
+        "values": [
+          "아메리카노"
+        ]
+      }
     }
   ]
 }
@@ -96,12 +107,13 @@ void main() {
       expect(response.intents.length, 13);
       expect(response.intents.first.intent, "light_service");
       expect(response.intents.first.score, 0.9847185);
-      expect(response.entities.length, 1);
+      expect(response.entities.length, 2);
       expect(response.entities.first.entity, "꺼");
       expect(response.entities.first.type, "Binary::False");
       expect(response.entities.first.startIndex, 4);
       expect(response.entities.first.endIndex, 4);
       expect(response.entities.first.score, 0.973015123);
+      expect(response.entities[1].value, "아메리카노");
     });
 
     test("Luis.query", () async{

@@ -33,13 +33,25 @@ class LuisEntity {
   int startIndex;
   int endIndex;
   double score;
+  String value;
 
   LuisEntity.fromMap(Map map){
     entity = map["entity"];
     type = map["type"];
     startIndex = map["startIndex"];
     endIndex = map["endIndex"];
-    score = map["score"];
+    if (map["score"] == null){
+      score = 1.0;
+    }else{
+      score = map["score"];
+    }
+
+    if (map["resolution"] != null && map["resolution"]["values"] != null){
+      var a = map["resolution"]["values"] as List<String>;
+      value = a.join(" ");
+    }else{
+      value = entity;
+    }
   }
 }
 
