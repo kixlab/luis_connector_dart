@@ -50,7 +50,7 @@ class LuisEntity {
       var a = map["resolution"]["values"] as List<String>;
       value = a.join(" ");
     }else{
-      value = entity;
+      value = "";
     }
   }
 }
